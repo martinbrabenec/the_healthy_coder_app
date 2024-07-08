@@ -5,17 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model
+class UserHealthLog extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'name',
-        'description',
-        'activity_type',
-        'is_favorite',
-        'is_public',
+        'log_type',
+        'value',
+        'logged_at',
     ];
 
     public function user()

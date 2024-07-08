@@ -1,25 +1,26 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model
+class UserFavorite extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'name',
-        'description',
-        'activity_type',
-        'is_favorite',
-        'is_public',
+        'favorable_id',
+        'favorable_type',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function favorable()
+    {
+        return $this->morphTo();
     }
 }

@@ -5,21 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model
+class RecipeStep extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'name',
+        'recipe_id',
         'description',
-        'activity_type',
-        'is_favorite',
-        'is_public',
+        'step_number',
     ];
 
-    public function user()
+    public function recipe()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Recipe::class);
     }
 }
