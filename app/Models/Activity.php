@@ -10,16 +10,21 @@ class Activity extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'name',
-        'description',
         'activity_type',
+        'body_zone',
+        'created_at',
+        'description',
         'is_favorite',
-        'is_public',
+        'name',
+        'photo_url',
+        'updated_at',
+        'user_id'
     ];
 
-    public function user()
+    // Other model properties and methods...
+
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class)->withTimestamps();
     }
 }

@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
 
         // Call the ActivitySeeder to seed activities
         $this->call(ActivitySeeder::class);
+        
     }
 }
